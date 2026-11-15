@@ -3,12 +3,9 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 from ..dependencies.database import Base
 
-
-class Resource(Base):
+class Resources(Base):
     __tablename__ = "resources"
-
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    item = Column(String(100), unique=True, nullable=False)
-    amount = Column(Integer, index=True, nullable=False, server_default='0.0')
+    resource_amount = Column(Integer)
 
-    recipes = relationship("Recipe", back_populates="resource")
+    orders = relationship("Order", back_populates="resources")

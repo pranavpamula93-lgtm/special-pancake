@@ -3,21 +3,18 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-class ResourceBase(BaseModel):
-    item: str
-    amount: int
+class ResourcesBase(BaseModel):
+    id: int
+    resource_amount: int
 
-
-class ResourceCreate(ResourceBase):
+class ResourcesCreate(ResourcesBase):
     pass
 
+class ResourcesUpdate(BaseModel):
+    id: Optional[int] = None
+    resource_amount: Optional[int] = None
 
-class ResourceUpdate(BaseModel):
-    item: Optional[str] = None
-    amount: Optional[int] = None
-
-
-class Resource(ResourceBase):
+class Resources(ResourcesBase):
     id: int
 
     class ConfigDict:
