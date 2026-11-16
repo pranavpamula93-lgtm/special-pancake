@@ -11,6 +11,7 @@ class Customers(Base):
     email = Column(String(200))
     phone_number = Column(Integer)
     address = Column(String(300))
+    review_id = Column(Integer, ForeignKey('reviews.id'))
 
     review = relationship("Reviews", back_populates="customers")
     orders = relationship("Order", back_populates="customers")
