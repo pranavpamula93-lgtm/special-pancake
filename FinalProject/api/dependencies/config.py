@@ -3,6 +3,6 @@ class conf:
     db_name = "final_project_api"
     db_port = 3306
     db_user = "root"
-    db_password = "0d7$06Pp" #Put your mySQL password here
+    db_password = "8900ChallBall!" #Put your mySQL password here
     app_host = "localhost"
     app_port = 8000
