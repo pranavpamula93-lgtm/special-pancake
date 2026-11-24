@@ -13,5 +13,5 @@ class Customers(Base):
     address = Column(String(300))
     review_id = Column(Integer, ForeignKey('reviews.id'))
 
-    review = relationship("Reviews", back_populates="customers")
+    reviews = relationship("Reviews", back_populates="customers")
     orders = relationship("Order", back_populates="customers")

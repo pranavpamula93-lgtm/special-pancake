@@ -3,8 +3,8 @@ from fastapi import HTTPException, status, Response, Depends
 from ..models import menu_items
 
 def create(db:Session, menu_item):
-    db_menu_item = menu_item.MenuItems(
-        dish = menu_item.dishes,
+    db_menu_item = menu_items.MenuItems(
+        dishes = menu_item.dishes,
         ingredients = menu_item.ingredients,
         price = menu_item.price,
         calories = menu_item.calories,

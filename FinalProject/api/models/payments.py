@@ -13,5 +13,5 @@ class Payments(Base):
     promo_id = Column(Integer, ForeignKey('promotions.id'))
     order_id = Column(Integer, ForeignKey('orders.id'))
 
-    order = relationship("Order", back_populates="payments")
+    orders = relationship("Order", back_populates="payments")
     promotions = relationship("Promotions", back_populates="payments")
